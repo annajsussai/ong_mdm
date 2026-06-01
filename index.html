@@ -41,13 +41,17 @@
             max-width: 100vw;
         }
         
-        /* Prevent any element from causing horizontal overflow on mobile */
-        * {
-            max-width: 100%;
+        /* Nuclear fix for horizontal overflow on mobile */
+        html, body {
+            overflow-x: clip !important;
+            max-width: 100vw !important;
         }
         img, video, iframe {
             max-width: 100%;
             height: auto;
+        }
+        section, header, footer, div, nav {
+            max-width: 100vw;
         }
         
         ::-webkit-scrollbar {
