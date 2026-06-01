@@ -115,6 +115,19 @@
             flex-wrap: wrap;
             gap: 12px;
         }
+        @media (max-width: 768px) {
+            .topbar-content {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 8px 16px;
+                gap: 8px;
+            }
+            .topbar-social {
+                justify-content: center;
+            }
+        }
         
         .topbar-contact a {
             color: white;
