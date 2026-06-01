@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Médicos do Mundo - Acolher e Ajudar em Todo Canto</title>
+    <link rel="icon" type="image/png" href="images/logos/logo_sem_texto.png">
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,7 +37,7 @@
         }
         
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
             background: transparent;
         }
         
@@ -45,18 +46,18 @@
         }
         
         ::-webkit-scrollbar-thumb {
-            background: rgba(0, 61, 130, 0.5);
-            border-radius: 10px;
-            transition: background 0.3s;
+            background: linear-gradient(180deg, #003d82 0%, #0056b3 100%);
+            border-radius: 99px;
+            transition: opacity 0.3s;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 61, 130, 0.8);
+            background: linear-gradient(180deg, #0056b3 0%, #003d82 100%);
         }
         
         * {
             scrollbar-width: thin;
-            scrollbar-color: rgba(0, 61, 130, 0.5) transparent;
+            scrollbar-color: rgba(0, 61, 130, 0.6) transparent;
         }
         
         :root {
@@ -144,7 +145,7 @@
         }
         
         .logo img { 
-            height: 68px;
+            height: 82px;
             width: auto;
         }
         
@@ -295,7 +296,7 @@
                 min-height: 100svh;
             }
             .header-content { height: 110px; }
-            .logo img { height: 56px; }
+            .logo img { height: 67px; }
         }
 
         @media (max-width: 480px) {
@@ -320,22 +321,37 @@
             width: 100%;
         }
 
+        /* wave: hero (#1a1a2e) → sobre (#f8f9fa) */
         .transition-hero-sobre { background: #1a1a2e; }
-        .transition-hero-sobre svg { height: 90px; }
-        .transition-sobre-trabalho { background: var(--light-gray); }
-        .transition-sobre-trabalho svg { height: 70px; }
-        .transition-servicos-missoes { background: rgba(0,20,60,0.97); }
-        .transition-servicos-missoes svg { height: 80px; }
-        .transition-missoes-parceiros { background: var(--light-gray); }
-        .transition-missoes-parceiros svg { height: 70px; }
-        .transition-parceiros-seguranca { background: #ffffff; }
-        .transition-parceiros-seguranca svg { height: 90px; }
-        .transition-seguranca-ajudar { background: rgba(0,20,60,0.97); }
-        .transition-seguranca-ajudar svg { height: 90px; }
-        .transition-ajudar-doacoes { background: #ffffff; }
-        .transition-ajudar-doacoes svg { height: 70px; }
-        .transition-doacoes-contato { background: var(--light-gray); }
-        .transition-doacoes-contato svg { height: 70px; }
+        .transition-hero-sobre svg { height: 120px; }
+
+        /* wave: sobre (#f8f9fa) → nosso-trabalho (white) */
+        .transition-sobre-trabalho { background: #f8f9fa; }
+        .transition-sobre-trabalho svg { height: 100px; }
+
+        /* wave: nosso-trabalho (white) + services (azul ~#003d82) → projetos (#0d1b2e) */
+        .transition-servicos-missoes { background: #002a5c; }
+        .transition-servicos-missoes svg { height: 110px; }
+
+        /* wave: projetos (#0d1b2e) → parceiros (white) */
+        .transition-missoes-parceiros { background: #0d1b2e; }
+        .transition-missoes-parceiros svg { height: 100px; }
+
+        /* wave: parceiros (white) → security (azul ~#003d82) */
+        .transition-parceiros-seguranca { background: white; }
+        .transition-parceiros-seguranca svg { height: 120px; }
+
+        /* wave: security (azul ~#003d82) → voluntariado (white) */
+        .transition-seguranca-ajudar { background: #003d82; }
+        .transition-seguranca-ajudar svg { height: 120px; }
+
+        /* wave: voluntariado (white) → doacoes (#f8f9fa) */
+        .transition-ajudar-doacoes { background: white; }
+        .transition-ajudar-doacoes svg { height: 100px; }
+
+        /* wave: doacoes (#f8f9fa) → contato (white) */
+        .transition-doacoes-contato { background: #f8f9fa; }
+        .transition-doacoes-contato svg { height: 100px; }
         
         #sobre-nos {
             background: var(--light-gray);
@@ -391,6 +407,13 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+
+        .services-wrapper .section-header-logo-center h2 {
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            color: white;
         }
         
         .section-header-logo-side {
@@ -971,16 +994,41 @@
         
         #parceiros { background: white; padding: 80px 0; }
         
-        .partners-carousel { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; }
-        .swiper { width: 100%; padding: 20px 0; }
-        .swiper-slide { display: flex; justify-content: center; align-items: center; }
-        .partner-carousel-item { background: var(--light-gray); padding: 30px 20px; border-radius: 20px; text-align: center; transition: all 0.3s; width: 100%; min-height: 140px; display: flex; align-items: center; justify-content: center; }
-        .partner-carousel-item:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); background: white; }
-        .partner-carousel-item img { max-width: 100%; max-height: 80px; object-fit: contain; }
-        .swiper-button-next, .swiper-button-prev { color: var(--primary-blue); background: white; width: 45px; height: 45px; border-radius: 50%; box-shadow: var(--shadow-md); }
-        .swiper-button-next:after, .swiper-button-prev:after { font-size: 18px; font-weight: bold; }
-        .swiper-button-next:hover, .swiper-button-prev:hover { background: var(--primary-blue); color: white; }
-        .swiper-pagination-bullet { background: var(--primary-blue); }
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        @media (max-width: 900px) { .partners-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .partners-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px; gap: 16px; } }
+
+        .partner-square {
+            background: var(--light-gray);
+            border-radius: 20px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .partner-square:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            background: white;
+        }
+
+        .partner-square img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
         .swiper-pagination-bullet-active { background: var(--accent-red); }
         @media (max-width: 768px) { .partners-carousel { padding: 0 20px; } .swiper-button-next, .swiper-button-prev { display: none; } }
         
@@ -1090,8 +1138,8 @@
     </section>
     
     <div class="wave-transition transition-hero-sobre">
-        <svg viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,0 C240,80 480,90 720,60 C960,30 1200,80 1440,50 L1440,90 L0,90 Z" fill="#f8f9fa"/>
+        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,0 C360,100 720,120 1080,70 C1260,45 1380,80 1440,60 L1440,120 L0,120 Z" fill="#f8f9fa"/>
         </svg>
     </div>
     
@@ -1131,8 +1179,8 @@
     </section>
     
     <div class="wave-transition transition-sobre-trabalho">
-        <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,35 C360,70 720,0 1080,45 C1260,62 1380,30 1440,20 L1440,70 L0,70 Z" fill="#ffffff"/>
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,50 C400,100 800,10 1200,65 C1320,80 1400,45 1440,30 L1440,100 L0,100 Z" fill="#ffffff"/>
         </svg>
     </div>
     
@@ -1174,8 +1222,8 @@
     </div>
     
     <div class="wave-transition transition-servicos-missoes">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,20 C180,60 360,0 540,40 C720,80 900,10 1080,50 C1260,80 1380,20 1440,30 L1440,80 L0,80 Z" fill="#0d1b2e"/>
+        <svg viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,30 C350,100 700,10 1050,70 C1230,95 1370,35 1440,50 L1440,110 L0,110 Z" fill="#0d1b2e"/>
         </svg>
     </div>
     
@@ -1237,9 +1285,9 @@
         <div class="btn-mission-donate" data-aos="fade-up"><a href="#doacoes" class="btn-donate" style="padding: 15px 60px; font-size: 14px;">DOE AGORA!</a></div>
     </section>
     
-    <div class="wave-transition transition-missoes-parceiros" style="background:#0d1b2e;">
-        <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,40 C300,0 600,70 900,30 C1100,5 1300,55 1440,35 L1440,70 L0,70 Z" fill="#ffffff"/>
+    <div class="wave-transition transition-missoes-parceiros">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,55 C360,5 720,100 1080,40 C1260,10 1380,70 1440,50 L1440,100 L0,100 Z" fill="#ffffff"/>
         </svg>
     </div>
     
@@ -1247,14 +1295,18 @@
         <div class="section-container">
             <div class="section-header-logo-side" data-aos="fade-up"><img src="images/logos/logo_sem_texto.png" alt="Logo Médicos do Mundo"><h2>NOSSOS PARCEIROS</h2></div>
             <p style="text-align: center; margin-bottom: 40px; color: var(--text-secondary); font-size: 16px;">Juntos realizamos muito mais</p>
-            <div class="partners-carousel"><div class="swiper partnersSwiper"><div class="swiper-wrapper"><div class="swiper-slide"><div class="partner-carousel-item"><img src="images/logos/logo_prefeitura_sp.png" alt="Prefeitura SP"></div></div><div class="swiper-slide"><div class="partner-carousel-item"><img src="images/logos/logo_apinan.jfif" alt="Apinan"></div></div><div class="swiper-slide"><div class="partner-carousel-item"><img src="images/logos/logo_insanos.png" alt="Insanos"></div></div><div class="swiper-slide"><div class="partner-carousel-item"><img src="images/logos/logo_bioconverter.png" alt="Bioconverter"></div></div></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div></div></div>
+            <div class="partners-grid">
+                <div class="partner-square" data-aos="zoom-in"><img src="images/logos/logo_prefeitura_sp.png" alt="Prefeitura SP"></div>
+                <div class="partner-square" data-aos="zoom-in" data-aos-delay="80"><img src="images/logos/logo_apinan.png" alt="Apinan"></div>
+                <div class="partner-square" data-aos="zoom-in" data-aos-delay="160"><img src="images/logos/logo_insanos.png" alt="Insanos"></div>
+                <div class="partner-square" data-aos="zoom-in" data-aos-delay="240"><img src="images/logos/logo_bioconverter.png" alt="Bioconverter"></div>
+            </div>
         </div>
     </section>
     
     <div class="wave-transition transition-parceiros-seguranca">
-        <svg viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,60 C240,10 480,90 720,40 C960,0 1200,70 1440,30 L1440,0 L0,0 Z" fill="#ffffff"/>
-            <path d="M0,70 C360,20 720,90 1080,45 C1260,22 1380,65 1440,50 L1440,90 L0,90 Z" fill="rgba(0,20,60,0.97)"/>
+        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,40 C360,110 720,10 1080,80 C1260,110 1380,40 1440,55 L1440,120 L0,120 Z" fill="#003d82"/>
         </svg>
     </div>
     
@@ -1270,8 +1322,8 @@
     </div>
     
     <div class="wave-transition transition-seguranca-ajudar">
-        <svg viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,30 C360,80 720,0 1080,55 C1260,75 1380,25 1440,40 L1440,90 L0,90 Z" fill="#ffffff"/>
+        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,40 C400,110 800,10 1200,70 C1340,90 1400,40 1440,55 L1440,120 L0,120 Z" fill="#ffffff"/>
         </svg>
     </div>
     
@@ -1288,8 +1340,8 @@
     </section>
     
     <div class="wave-transition transition-ajudar-doacoes">
-        <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,20 C180,55 360,5 540,35 C720,65 900,15 1080,45 C1260,70 1380,30 1440,40 L1440,70 L0,70 Z" fill="#f8f9fa"/>
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,30 C360,90 720,5 1080,60 C1260,85 1380,35 1440,50 L1440,100 L0,100 Z" fill="#f8f9fa"/>
         </svg>
     </div>
     
@@ -1319,8 +1371,8 @@
     </section>
     
     <div class="wave-transition transition-doacoes-contato">
-        <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,50 C360,10 720,70 1080,30 C1260,10 1380,50 1440,40 L1440,70 L0,70 Z" fill="#ffffff"/>
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,65 C400,15 800,95 1200,40 C1340,18 1400,65 1440,50 L1440,100 L0,100 Z" fill="#ffffff"/>
         </svg>
     </div>
     
