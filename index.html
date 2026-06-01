@@ -193,17 +193,38 @@
         @media (max-width: 1024px) {
             nav {
                 display: none;
-                position: absolute;
-                top: 124px;
+                position: fixed;
+                top: 0;
                 left: 0;
                 right: 0;
-                background: var(--dark);
+                bottom: 0;
+                background: rgba(10, 14, 30, 0.97);
+                backdrop-filter: blur(16px);
                 flex-direction: column;
-                padding: 30px;
-                gap: 20px;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                z-index: 2000;
+                padding: 80px 30px 40px;
             }
             nav.mobile-open { display: flex; }
-            nav .btn-donate-mobile { display: inline-block !important; }
+            nav a {
+                font-size: 18px;
+                letter-spacing: 2px;
+                padding: 14px 0;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.07);
+            }
+            nav a::after { display: none; }
+            nav .btn-donate-mobile {
+                display: inline-block !important;
+                margin-top: 16px;
+                padding: 16px 50px;
+                font-size: 15px;
+                border-bottom: none;
+                width: auto;
+            }
         }
 
         .btn-donate-mobile {
@@ -1491,6 +1512,7 @@
         const mobileBtn = document.getElementById('mobileMenuBtn');
         const nav = document.getElementById('mainNav');
         mobileBtn.addEventListener('click', () => { nav.classList.toggle('mobile-open'); });
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('mobile-open')));
         window.addEventListener('resize', () => { if (window.innerWidth > 1024) nav.classList.remove('mobile-open'); });
         
         const counters = document.querySelectorAll('.counter');
