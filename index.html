@@ -196,16 +196,16 @@
                 position: fixed;
                 top: 0;
                 left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(10, 14, 30, 0.97);
-                backdrop-filter: blur(16px);
+                width: 100vw;
+                height: 100vh;
+                background: #0a0e1e;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 8px;
-                z-index: 2000;
+                z-index: 9999;
                 padding: 80px 30px 40px;
+                overflow: hidden;
             }
             nav.mobile-open { display: flex; }
             nav a {
@@ -283,6 +283,8 @@
             cursor: pointer;
             padding: 8px;
             flex-shrink: 0;
+            position: relative;
+            z-index: 10000;
         }
         
         .mobile-menu-btn span {
