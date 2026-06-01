@@ -284,9 +284,26 @@
         
         @media (max-width: 768px) {
             .hero-main-text { font-size: 32px; }
-            #hero { padding: 0 20px 60px; margin-top: -110px; }
+            #hero {
+                padding: 0 20px 60px;
+                margin-top: -110px;
+                background-image: linear-gradient(135deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
+                                  url('images/hero_img.png');
+                background-position: center top;
+                background-size: cover;
+                background-attachment: scroll;
+                min-height: 100svh;
+            }
             .header-content { height: 110px; }
             .logo img { height: 56px; }
+        }
+
+        @media (max-width: 480px) {
+            #hero {
+                background-position: 60% top;
+            }
+            .hero-main-text { font-size: 28px; }
+            .hero-credit { font-size: 14px; }
         }
         
         .wave-transition {
@@ -1340,6 +1357,18 @@
         <div class="footer-bottom"><p>COPYRIGHT © 2026 | MEDICOS DO MUNDO</p></div>
     </footer>
     
+    <!-- VLibras Widget - Acessibilidade em Libras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
