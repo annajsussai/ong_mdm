@@ -172,6 +172,11 @@
                 gap: 20px;
             }
             nav.mobile-open { display: flex; }
+            nav .btn-donate-mobile { display: inline-block !important; }
+        }
+
+        .btn-donate-mobile {
+            display: none;
         }
         
         nav a {
@@ -224,6 +229,8 @@
             background: none;
             border: none;
             cursor: pointer;
+            padding: 8px;
+            flex-shrink: 0;
         }
         
         .mobile-menu-btn span {
@@ -234,6 +241,15 @@
         }
         
         @media (max-width: 1024px) { .mobile-menu-btn { display: flex; } }
+
+        @media (max-width: 768px) {
+            .btn-donate {
+                display: none;
+            }
+            .header-content {
+                padding: 0 16px;
+            }
+        }
         
         #hero {
             min-height: 100vh;
@@ -689,6 +705,11 @@
             background-size: cover;
             padding: 80px 0;
         }
+        @media (max-width: 992px) {
+            .services-wrapper {
+                background-attachment: scroll;
+            }
+        }
         
         .services-grid {
             display: grid;
@@ -1037,14 +1058,20 @@
             background: url('images/medicos02_img.jpg') center/cover fixed; 
             padding: 80px 0; 
         }
+        @media (max-width: 992px) {
+            .security-wrapper {
+                background-attachment: scroll;
+            }
+        }
         .security-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(0,61,130,0.88), rgba(0,0,0,0.78)); }
         .security-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; padding: 0 40px; }
-        @media (max-width: 992px) { .security-content { grid-template-columns: 1fr; gap: 40px; text-align: center; } }
-        @media (max-width: 768px) { .security-content { padding: 0 20px; } }
+        @media (max-width: 992px) { .security-content { grid-template-columns: 1fr; gap: 40px; text-align: center; padding: 0 20px; } }
         .security-image img { width: 100%; border-radius: 24px; box-shadow: var(--shadow-xl); }
         .security-logo { margin-bottom: 25px; }
-        .security-logo img { max-height: 130px; width: auto; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3)); }
-        .security-text { color: white; font-size: 17px; line-height: 1.8; }
+        @media (max-width: 992px) { .security-logo { display: flex; justify-content: center; } }
+        .security-logo img { max-height: 130px; max-width: 100%; width: auto; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3)); }
+        .security-text { color: white; font-size: 17px; line-height: 1.8; word-break: break-word; overflow-wrap: break-word; }
+        @media (max-width: 992px) { .security-text { font-size: 15px; } }
         .security-text strong { color: var(--accent-coral); }
         
         #voluntariado { background: white; padding: 80px 0; }
@@ -1124,7 +1151,7 @@
     <header id="header">
         <div class="header-content">
             <div class="logo"><img src="images/logos/logo_menu.png" alt="Logo"></div>
-            <nav id="mainNav"><a href="#sobre-nos">Sobre Nós</a><a href="#projetos">Projetos</a><a href="#voluntariado">Seja voluntário!</a><a href="#contato">Fale conosco</a></nav>
+            <nav id="mainNav"><a href="#sobre-nos">Sobre Nós</a><a href="#projetos">Projetos</a><a href="#voluntariado">Seja voluntário!</a><a href="#contato">Fale conosco</a><a href="#doacoes" class="btn-donate btn-donate-mobile">DOE AGORA!</a></nav>
             <a href="#doacoes" class="btn-donate">DOE AGORA!</a>
             <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
         </div>
