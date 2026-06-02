@@ -1,22 +1,22 @@
 <div align="center">
-  <img src="./images/logos/logo_sem_texto.png" width="80" height="80" alt="Logo Médicos do Mundo">
-  <h1>Landing Page - Médicos do Mundo Brasil</h1>
+  <img src="./images/logos/logo_sem_texto.png" width="60" alt="Logo Médicos do Mundo">
+  <h1>Landing Page - ONG Médicos do Mundo Brasil</h1>
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/status-produtivo-green" alt="Status">
+  <img src="https://img.shields.io/badge/status-protótipo-orange" alt="Status">
   <img src="https://img.shields.io/badge/HTML5-orange" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-blue" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-Vanilla-yellow" alt="JavaScript">
 </div>
 
-Landing page institucional da **Associação Médicos do Mundo Brasil**, apresentando projetos, missões, parcerias e canais de doação e voluntariado.
+Landing page institucional da **ONG Médicos do Mundo Brasil**, apresentando projetos, missões, parcerias e canais de doação e voluntariado.
 
 ---
 
 ## 🔗 Link do Projeto
 
-- **Produção:** [https://annajsussai.github.io](https://annajsussai.github.io)
+- **Produção:** [https://annajsussai.github.io/ong_mdm/](https://annajsussai.github.io/ong_mdm/)
 
 ---
 
@@ -39,65 +39,61 @@ Site estático em HTML/CSS/JS puro para a ONG Médicos do Mundo Brasil. Apresent
 
 ## 🐱‍💻 Funcionalidades Principais
 
-- **Menu mobile fullscreen** — overlay em tela cheia com animação suave
-- **Header dinâmico** — muda visual ao rolar a página (`.scrolled`)
-- **Scroll com inércia** — efeito de scroll suavizado no desktop (lerp 0.1)
-- **Contadores animados** — números sobem ao entrar na viewport
-- **Carrossel de parceiros** — Swiper.js com autoplay e responsivo
-- **Formulário de contato** — preenchimento automático do campo Assunto via cards
-- **Acessibilidade** — VLibras integrado (Libras para deficientes auditivos)
-- **AOS Animations** — animações de entrada ao rolar a página
+- **Menu mobile fullscreen** 
+- **Header dinâmico** 
+- **Scroll suavizado no desktop (lerp 0.1)**
+- **Contadores animados** 
+- **Carrossel de parceiros: Swiper.js com autoplay e responsivo**
+- **Formulário de contato: Preenchimento automático do campo Assunto via cards**
+- **Acessibilidade: VLibras integrado (Libras para deficientes auditivos)**
+- **AOS Animations: Animações de entrada ao rolar a página**
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
 ### Frontend
-- **HTML5** — Estrutura semântica
-- **CSS3** — Estilização responsiva com variáveis CSS (design tokens)
-- **JavaScript Vanilla** — Toda lógica sem frameworks
+- **HTML5** 
+- **CSS3**
+- **JavaScript Vanilla**
 
 ### Bibliotecas externas (CDN)
-- **Swiper.js** — Carrossel de parceiros
-- **AOS** — Animações ao scroll
-- **Font Awesome** — Ícones
-- **Google Fonts** — Montserrat + Playfair Display
-- **VLibras** — Acessibilidade em Libras (Gov.br)
+- **Swiper.js: Carrossel de parceiros**
+- **AOS: Animações ao scroll**
+- **Font Awesome: Ícones**
+- **Google Fonts: Montserrat + Playfair Display**
+- **VLibras Acessibilidade em Libras (Gov.br)**
 
 ---
 
-## 📁 Estrutura de Arquivos
 
-```
-/
-├── index.html          # Arquivo principal (todo HTML, CSS e JS inline)
-├── images/
-│   ├── logos/          # Logotipos da ONG
-│   ├── parceiros/      # Logos dos parceiros
-│   └── *.jpg / *.png   # Imagens das seções
-```
-
----
-
-## 🎨 Design Tokens (Cores)
-
-Edite as variáveis no `:root` dentro do `<style>` do `index.html`:
-
-| Variável | Valor | Uso |
-|---|---|---|
-| `--primary-blue` | `#003d82` | Cor principal |
-| `--accent-red` | `#e63946` | Destaque vermelho |
-| `--accent-coral` | `#ff6b6b` | Botões e hovers |
-| `--dark` | `#1a1a2e` | Fundo escuro / menu |
-
----
-
-## ⚙️ Manutenção
-
-- **Adicionar parceiro:** incluir novo `<div class="swiper-slide">` dentro de `.partnersSwiper`
-- **Alterar velocidade do scroll suavizado:** ajustar `ease` no script de inércia (0.05 = lento, 0.2 = rápido)
-- **Alterar contadores:** editar atributo `data-target` nos elementos `.counter`
-- **Cores globais:** editar variáveis CSS no `:root`
+## 🎨 Design & UX/UI
+ 
+### Identidade Visual
+- Paleta institucional azul (`#003d82`) + vermelho (`#e63946`) da ONG
+- Tipografia: **Montserrat** (textos e UI) + **Playfair Display** (títulos editoriais)
+- Design tokens centralizados em variáveis CSS (`:root`)
+### Layout & Responsividade
+- Totalmente responsivo: mobile, tablet e desktop
+- Grid e Flexbox nativos, sem frameworks CSS
+- Breakpoints principais: 768px (mobile) e 1024px (desktop)
+- Imagens com `object-fit: cover` para nunca distorcer
+### Interações & Animações
+- Scroll com inércia no desktop (efeito lerp, desativado no mobile)
+- Animações de entrada ao scroll via **AOS** (`fade-up`, `zoom-in`, `fade-right`)
+- Contadores numéricos animados ao entrar na viewport
+- Header transparente que ganha fundo sólido ao rolar (`.scrolled`)
+- Hover com transições suaves em botões, cards e links (25+ estados `:hover`)
+### Navegação
+- Navegável por teclado: todos os links e botões são elementos nativos (`<a>`, `<button>`)
+- Foco visível nos campos do formulário (outline azul com box-shadow)
+- Scroll suave por âncora entre seções (`scroll-behavior: smooth`)
+- Menu mobile fecha automaticamente ao selecionar uma seção
+### Acessibilidade
+- **VLibras** integrado: tradução em Libras para deficientes auditivos (padrão Gov.br)
+- Todas as imagens com atributo `alt` descritivo
+- Hierarquia semântica de headings (`h1` → `h2` → `h3`)
+- Contraste de cores adequado entre texto e fundo
 
 ---
 
